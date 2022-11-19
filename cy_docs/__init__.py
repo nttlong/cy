@@ -19,7 +19,7 @@ T = TypeVar('T')
 
 def expr(cls: T) -> T:
     """
-    Create mongodb build expression base on cls
+    Create mongodb build expression base on __cls__
     :param cls:
     :return:
     """

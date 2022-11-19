@@ -470,7 +470,7 @@ def __wrap_pydantic__(pre, cls, is_lock=True):
                         if get_cls(fv) is None:
                             re_modify = __wrap_pydantic__(cls.__name__, fv, False)
                             # setattr(sys.modules[fv.__module__],fv.__name__,re_modify)
-                            # setattr(sys.modules[cls.__module__], fv.__name__, re_modify)
+                            # setattr(sys.modules[__cls__.__module__], fv.__name__, re_modify)
 
                             temp += [re_modify]
                         else:
@@ -1359,7 +1359,7 @@ async def streaming_async(fsg,request,content_type,streaming_buffering=1024 *  8
     """
     Streaming content
     :param fsg: mongodb gridOut
-    :param request: client request
+    :param request: __client__ request
     :param content_type: mime_type
     :param streaming_buffering: support 4k
     :return:

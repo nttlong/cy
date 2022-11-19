@@ -1,5 +1,8 @@
+import cy_kit
 import cy_web
 from fastapi import Request,Depends,status
+
+import cy_xdoc.services.accounts
 from cy_xdoc import libs
 from fastapi_jwt_auth import AuthJWT
 from fastapi.responses import RedirectResponse
@@ -19,7 +22,8 @@ async def do_sign_in(SSOID: str, request: Request):
     :return:
     """
     # accounts_services= enig.depen(enig_frames.services.accounts.Accounts)
-    sso_info = libs.Services.account.get_sso_login(
+    account_service = cy_kit.inject(cy_xdoc.services.accounts.AccountService)
+    sso_info = account_service.get_sso_login(
 
         id=SSOID
     ) # await container.Services.accounts.get_sso_login_asycn(SSOID=SSOID)

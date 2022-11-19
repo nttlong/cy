@@ -30,13 +30,13 @@ def config_provider(from_class: type, implement_class: type):
 from typing import Generic
 
 # class Provider(Generic[T]):
-#     def __init__(self,cls:type):
-#         self.cls=cls
+#     def __init__(self,__cls__:type):
+#         self.__cls__=__cls__
 #         self.__ins__ =None
 #     @property
 #     def instance(self)->T:
 #         if self.__ins__  is None:
-#             self.__ins__ = cy_kit_x.provider(self.cls)
+#             self.__ins__ = cy_kit_x.provider(self.__cls__)
 #         return self.__ins__
 
 

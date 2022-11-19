@@ -82,7 +82,7 @@ tmp_media_processing_folder: ./tmp_media
 ext_office_file: [
                    xds,ini,config,md,
                    abap,ash,ampl,mod,g4,apib,apl,ascx,asax,axd,dats,hats,sats,as,
-                   ada,ads,agda,als,conf,apacheconf,vhost,cls,applescript,scpt,
+                   ada,ads,agda,als,conf,apacheconf,vhost,__cls__,applescript,scpt,
                    arc,ino,asciidoc,adoc,asc,aj,asm,inc,nasm,aug,ahk,ahk1,au3,
                    awk,auk,gawk,mawk,nawk,cmd,bat,yml,yaml,bison,bb,decls,bmx,
                    bsv,boo,b,bf,brs,bro,cats,idc,w,cake,cshtml,c++,cc,cxx,hh,hpp,

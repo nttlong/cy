@@ -2998,13 +2998,13 @@ static const char __pyx_k_Thous_can_not_sort_stage_with[] = "Thous can not sort 
 static const char __pyx_k_and_operation_require_2_Field[] = "and operation require 2 Field";
 static const char __pyx_k_pymongo_collection_Collection[] = "pymongo.collection.Collection";
 static const char __pyx_k_DbContext___new___locals_empty[] = "DbContext.__new__.<locals>.empty";
-static const char __pyx_k_cy_docs_is_library_for_mongodb[] = "\ncy_docs is library for mongodb document manipulating such as:\n1-binary mongodb expression builder:\n    Example: print(cy_docs.fields.code=='001' and cy_docs.fields.age>18)\n\nfind, find_one, find_async, find_one_async\nExample:\n    client = pymongo.mongo_client.MongoClient(host=..,port=..,..)\n    my_doc = cy_docs.get_doc(\n        \"my-docs\",\n         client\n        )\n    ret =my_doc['my-db'].insert_one(cy_docs.fields.code<<'001',cy_docs.fields.age<<32)\n    print (ret)\nSpecial:\n    ret =my_doc['my-db'].insert_one(cy_docs.fields.code<<'001',cy_docs.fields.age<<32) can be changed\n    ret =my_doc['my-db']<<(cy_docs.fields.code<<'001',cy_docs.fields.age<<32)\n    find_item =my_doc['my-db'].find_one(cy_docs.fields.code=='001' & cy_docs.fields.age == 32) can be changed\n    find_item =my_doc['my-db']@(cy_docs.fields.code=='001' & cy_docs.fields.age == 32) can be changed\n    find_items = my_doc['my-db'].find(cy_docs.fields.code!='001' & cy_docs.fields.age < 32) can be changed\n    find_items = my_doc['my-db']>>(cy_docs.fields.code!='001' & cy_docs.fields.age < 32) can be changed\n";
+static const char __pyx_k_cy_docs_is_library_for_mongodb[] = "\ncy_docs is library for mongodb document manipulating such as:\n1-binary mongodb expression builder:\n    Example: print(cy_docs.fields.code=='001' and cy_docs.fields.age>18)\n\nfind, find_one, find_async, find_one_async\nExample:\n    __client__ = pymongo.mongo_client.MongoClient(host=..,port=..,..)\n    my_doc = cy_docs.get_doc(\n        \"my-docs\",\n         __client__\n        )\n    ret =my_doc['my-db'].insert_one(cy_docs.fields.code<<'001',cy_docs.fields.age<<32)\n    print (ret)\nSpecial:\n    ret =my_doc['my-db'].insert_one(cy_docs.fields.code<<'001',cy_docs.fields.age<<32) can be changed\n    ret =my_doc['my-db']<<(cy_docs.fields.code<<'001',cy_docs.fields.age<<32)\n    find_item =my_doc['my-db'].find_one(cy_docs.fields.code=='001' & cy_docs.fields.age == 32) can be changed\n    find_item =my_doc['my-db']@(cy_docs.fields.code=='001' & cy_docs.fields.age == 32) can be changed\n    find_items = my_doc['my-db'].find(cy_docs.fields.code!='001' & cy_docs.fields.age < 32) can be changed\n    find_items = my_doc['my-db']>>(cy_docs.fields.code!='001' & cy_docs.fields.age < 32) can be changed\n";
 static const char __pyx_k_document_define_locals_wrapper[] = "document_define.<locals>.wrapper";
 static const char __pyx_k_init_value_must_be_str_or_ditc[] = "init_value must be str or ditc";
 static const char __pyx_k_Thous_can_not_use_project_stage[] = "Thous can not use project stage with ";
 static const char __pyx_k_AggregateDocument_to_json_conver[] = "AggregateDocument.to_json_convertable";
-static const char __pyx_k_All_element_in_left_shift_docume[] = "All element in left shift document must be cy_docs.Field. Example:my_doc = cy_docs.get_doc('my-coll-name',client)test_docs['my-db-name']<<( cy_docs.fields.Code <<'001', cy_docs.fields.Name << 'Name'";
-static const char __pyx_k_All_element_in_right_shift_docum[] = "All element in right shift document must be cy_docs.Field. Example:my_doc = cy_docs.get_doc('my-coll-name',client)test_docs['my-db-name']>>( cy_docs.fields.MyNumber>1000";
+static const char __pyx_k_All_element_in_left_shift_docume[] = "All element in left shift document must be cy_docs.Field. Example:my_doc = cy_docs.get_doc('my-coll-name',__client__)test_docs['my-db-name']<<( cy_docs.fields.Code <<'001', cy_docs.fields.Name << 'Name'";
+static const char __pyx_k_All_element_in_right_shift_docum[] = "All element in right shift document must be cy_docs.Field. Example:my_doc = cy_docs.get_doc('my-coll-name',__client__)test_docs['my-db-name']>>( cy_docs.fields.MyNumber>1000";
 static const char __pyx_k_DBDocument_find_to_json_converta[] = "DBDocument.find_to_json_convertable";
 static const char __pyx_k_DocumentObject_to_json_convertab[] = "DocumentObject.to_json_convertable";
 static const char __pyx_k_Param_in_Find_one_must_be_cy_doc[] = "Param in Find one must be cy_docs.Field or dict";
@@ -24122,7 +24122,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_10DBDocument_2__lshift__(CYTHON_UN
  *                         insert_dict[x.__field_name__] = x.__value__
  *                 else:
  *                     raise Exception("All element in left shift document must be cy_docs.Field. Example:"             # <<<<<<<<<<<<<<
- *                                     "my_doc = cy_docs.get_doc('my-coll-name',client)"
+ *                                     "my_doc = cy_docs.get_doc('my-coll-name',__client__)"
  *                                     "test_docs['my-db-name']<<( cy_docs.fields.Code <<'001', cy_docs.fields.Name << 'Name'")
  */
       /*else*/ {
@@ -24145,7 +24145,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_10DBDocument_2__lshift__(CYTHON_UN
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
     /* "cy_docs/cy_docs_x.py":803
- *                                     "my_doc = cy_docs.get_doc('my-coll-name',client)"
+ *                                     "my_doc = cy_docs.get_doc('my-coll-name',__client__)"
  *                                     "test_docs['my-db-name']<<( cy_docs.fields.Code <<'001', cy_docs.fields.Name << 'Name'")
  *             if insert_dict.get("_id") is None:             # <<<<<<<<<<<<<<
  *                 insert_dict["_id"] = bson.ObjectId()
@@ -24193,7 +24193,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_10DBDocument_2__lshift__(CYTHON_UN
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
       /* "cy_docs/cy_docs_x.py":803
- *                                     "my_doc = cy_docs.get_doc('my-coll-name',client)"
+ *                                     "my_doc = cy_docs.get_doc('my-coll-name',__client__)"
  *                                     "test_docs['my-db-name']<<( cy_docs.fields.Code <<'001', cy_docs.fields.Name << 'Name'")
  *             if insert_dict.get("_id") is None:             # <<<<<<<<<<<<<<
  *                 insert_dict["_id"] = bson.ObjectId()
@@ -24261,7 +24261,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_10DBDocument_2__lshift__(CYTHON_UN
  *             return ret
  *         else:
  *             raise Exception("All element in left shift document must be cy_docs.Field. Example:"             # <<<<<<<<<<<<<<
- *                             "my_doc = cy_docs.get_doc('my-coll-name',client)"
+ *                             "my_doc = cy_docs.get_doc('my-coll-name',__client__)"
  *                             "test_docs['my-db-name']<<( cy_docs.fields.Code <<'001', cy_docs.fields.Name << 'Name'")
  */
   /*else*/ {
@@ -24602,7 +24602,7 @@ static PyObject *__pyx_gb_7cy_docs_9cy_docs_x_10DBDocument_6generator(__pyx_Coro
  *             ret = self.collection.find(other.to_mongo_db_expr())
  *         else:
  *             raise Exception("All element in right shift document must be cy_docs.Field. Example:"             # <<<<<<<<<<<<<<
- *                             "my_doc = cy_docs.get_doc('my-coll-name',client)"
+ *                             "my_doc = cy_docs.get_doc('my-coll-name',__client__)"
  *                             "test_docs['my-db-name']>>( cy_docs.fields.MyNumber>1000")
  */
   /*else*/ {
@@ -41069,7 +41069,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_18get_file(CYTHON_UNUSED PyObject 
  *         file_id = bson.ObjectId(file_id)
  *     ret = gfs.open_download_stream(file_id)             # <<<<<<<<<<<<<<
  * 
- *     # ret = gridfs.GridFS(client.get_database(db_name)).get(file_id)
+ *     # ret = gridfs.GridFS(__client__.get_database(__db_name__)).get(file_id)
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_gfs, __pyx_n_s_open_download_stream); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -41098,7 +41098,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_18get_file(CYTHON_UNUSED PyObject 
 
   /* "cy_docs/cy_docs_x.py":1435
  * 
- *     # ret = gridfs.GridFS(client.get_database(db_name)).get(file_id)
+ *     # ret = gridfs.GridFS(__client__.get_database(__db_name__)).get(file_id)
  *     return ret             # <<<<<<<<<<<<<<
  * 
  * 
@@ -41430,7 +41430,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_20get_file_by_name(CYTHON_UNUSED P
  * 
  * def create_file(client, db_name: str, file_name: str, file_size: int, chunk_size: int):             # <<<<<<<<<<<<<<
  *     db = client.get_database(db_name)
- *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(client.get_database(db_name))
+ *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(__client__.get_database(__db_name__))
  */
 
 /* Python wrapper */
@@ -41585,7 +41585,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_22create_file(CYTHON_UNUSED PyObje
  * 
  * def create_file(client, db_name: str, file_name: str, file_size: int, chunk_size: int):
  *     db = client.get_database(db_name)             # <<<<<<<<<<<<<<
- *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(client.get_database(db_name))
+ *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(__client__.get_database(__db_name__))
  * 
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_client, __pyx_n_s_get_database); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1446, __pyx_L1_error)
@@ -41616,7 +41616,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_22create_file(CYTHON_UNUSED PyObje
   /* "cy_docs/cy_docs_x.py":1447
  * def create_file(client, db_name: str, file_name: str, file_size: int, chunk_size: int):
  *     db = client.get_database(db_name)
- *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(client.get_database(db_name))             # <<<<<<<<<<<<<<
+ *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(__client__.get_database(__db_name__))             # <<<<<<<<<<<<<<
  * 
  *     fs = gfs.new_file()
  */
@@ -41672,7 +41672,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_22create_file(CYTHON_UNUSED PyObje
   __pyx_t_1 = 0;
 
   /* "cy_docs/cy_docs_x.py":1449
- *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(client.get_database(db_name))
+ *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(__client__.get_database(__db_name__))
  * 
  *     fs = gfs.new_file()             # <<<<<<<<<<<<<<
  *     fs.name = file_name
@@ -41871,7 +41871,7 @@ static PyObject *__pyx_pf_7cy_docs_9cy_docs_x_22create_file(CYTHON_UNUSED PyObje
  * 
  * def create_file(client, db_name: str, file_name: str, file_size: int, chunk_size: int):             # <<<<<<<<<<<<<<
  *     db = client.get_database(db_name)
- *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(client.get_database(db_name))
+ *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(__client__.get_database(__db_name__))
  */
 
   /* function exit code */
@@ -42208,7 +42208,7 @@ static PyObject *__pyx_gb_7cy_docs_9cy_docs_x_26generator11(__pyx_CoroutineObjec
  *     if isinstance(file_id, str):
  *         file_id = bson.ObjectId(file_id)             # <<<<<<<<<<<<<<
  *     ret = await gfs.open_download_stream(file_id)
- *     # ret = gridfs.GridFS(client.get_database(db_name)).get(file_id)
+ *     # ret = gridfs.GridFS(__client__.get_database(__db_name__)).get(file_id)
  */
     __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_bson); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1474, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -42253,7 +42253,7 @@ static PyObject *__pyx_gb_7cy_docs_9cy_docs_x_26generator11(__pyx_CoroutineObjec
  *     if isinstance(file_id, str):
  *         file_id = bson.ObjectId(file_id)
  *     ret = await gfs.open_download_stream(file_id)             # <<<<<<<<<<<<<<
- *     # ret = gridfs.GridFS(client.get_database(db_name)).get(file_id)
+ *     # ret = gridfs.GridFS(__client__.get_database(__db_name__)).get(file_id)
  *     return ret
  */
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_gfs, __pyx_n_s_open_download_stream); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1475, __pyx_L1_error)
@@ -42302,7 +42302,7 @@ static PyObject *__pyx_gb_7cy_docs_9cy_docs_x_26generator11(__pyx_CoroutineObjec
 
   /* "cy_docs/cy_docs_x.py":1477
  *     ret = await gfs.open_download_stream(file_id)
- *     # ret = gridfs.GridFS(client.get_database(db_name)).get(file_id)
+ *     # ret = gridfs.GridFS(__client__.get_database(__db_name__)).get(file_id)
  *     return ret             # <<<<<<<<<<<<<<
  * 
  * 
@@ -42646,7 +42646,7 @@ static PyObject *__pyx_gb_7cy_docs_9cy_docs_x_29generator12(__pyx_CoroutineObjec
  *     gfs = AsyncIOMotorGridFSBucket(async_client.get_database(db_name))
  *     ret = await  gfs.find({"rel_file_path": rel_file_path})             # <<<<<<<<<<<<<<
  * 
- *     # ret = gridfs.GridFS(client.get_database(db_name)).get(file_id)
+ *     # ret = gridfs.GridFS(__client__.get_database(__db_name__)).get(file_id)
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_gfs, __pyx_n_s_find); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -42698,7 +42698,7 @@ static PyObject *__pyx_gb_7cy_docs_9cy_docs_x_29generator12(__pyx_CoroutineObjec
 
   /* "cy_docs/cy_docs_x.py":1488
  * 
- *     # ret = gridfs.GridFS(client.get_database(db_name)).get(file_id)
+ *     # ret = gridfs.GridFS(__client__.get_database(__db_name__)).get(file_id)
  *     return ret             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
@@ -45965,7 +45965,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                         insert_dict[x.__field_name__] = x.__value__
  *                 else:
  *                     raise Exception("All element in left shift document must be cy_docs.Field. Example:"             # <<<<<<<<<<<<<<
- *                                     "my_doc = cy_docs.get_doc('my-coll-name',client)"
+ *                                     "my_doc = cy_docs.get_doc('my-coll-name',__client__)"
  *                                     "test_docs['my-db-name']<<( cy_docs.fields.Code <<'001', cy_docs.fields.Name << 'Name'")
  */
   __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_All_element_in_left_shift_docume); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 800, __pyx_L1_error)
@@ -45976,7 +45976,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             ret = self.collection.find(other.to_mongo_db_expr())
  *         else:
  *             raise Exception("All element in right shift document must be cy_docs.Field. Example:"             # <<<<<<<<<<<<<<
- *                             "my_doc = cy_docs.get_doc('my-coll-name',client)"
+ *                             "my_doc = cy_docs.get_doc('my-coll-name',__client__)"
  *                             "test_docs['my-db-name']>>( cy_docs.fields.MyNumber>1000")
  */
   __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_All_element_in_right_shift_docum); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 820, __pyx_L1_error)
@@ -47012,7 +47012,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * def create_file(client, db_name: str, file_name: str, file_size: int, chunk_size: int):             # <<<<<<<<<<<<<<
  *     db = client.get_database(db_name)
- *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(client.get_database(db_name))
+ *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(__client__.get_database(__db_name__))
  */
   __pyx_tuple__180 = PyTuple_Pack(8, __pyx_n_s_client, __pyx_n_s_db_name, __pyx_n_s_file_name, __pyx_n_s_file_size, __pyx_n_s_chunk_size, __pyx_n_s_db, __pyx_n_s_gfs, __pyx_n_s_fs); if (unlikely(!__pyx_tuple__180)) __PYX_ERR(0, 1445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__180);
@@ -49880,7 +49880,7 @@ if (!__Pyx_RefNanny) {
  * 
  * def create_file(client, db_name: str, file_name: str, file_size: int, chunk_size: int):             # <<<<<<<<<<<<<<
  *     db = client.get_database(db_name)
- *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(client.get_database(db_name))
+ *     gfs = gridfs.GridFS(client.get_database(db_name))  # gridfs.GridFSBucket(__client__.get_database(__db_name__))
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);

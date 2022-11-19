@@ -11,25 +11,25 @@ T = TypeVar("T")
 
 class DbCollection(Generic[T]):
     def __init__(self,cls,client:MongoClient,db_name:str):
-        self.cls=cls
-        self.client=client
-        self.db_name=db_name
+        self.__cls__=cls
+        self.__client__=client
+        self.__db_name__=db_name
     @property
     def context(self):
         ret = cy_docs.context(
-            client=self.client,
-            cls=self.cls
-        )[self.db_name]
+            client=self.__client__,
+            cls=self.__cls__
+        )[self.__db_name__]
         return ret
     @property
     def fields(self)->T:
-        return cy_docs.expr(self.cls)
+        return cy_docs.expr(self.__cls__)
 class DB:
     def __init__(self,client:MongoClient,db_name:str):
-        self.client=client
-        self.db_name =db_name
+        self.__client__=client
+        self.__db_name__ =db_name
     def doc(self,cls:T)->DbCollection[T]:
-        return DbCollection[T](cls,self.client,self.db_name)
+        return DbCollection[T](cls, self.__client__, self.__db_name__)
 class DbConnect:
     def __init__(self):
         self.connect_config= config.db
@@ -44,7 +44,7 @@ class DbConnect:
 
 
 
-class DbContext:
+class __DbContext__:
     def __init__(self, db_name: str, client: MongoClient):
         self.client = client
         self.db_name = db_name
@@ -80,7 +80,7 @@ class Base:
             return app_name
 
     def db(self, app_name: str):
-        return DbContext(self.db_name(app_name), self.client)
+        return __DbContext__(self.db_name(app_name), self.client)
 
     async def get_file_async(self, app_name: str, file_id):
         return await cy_docs.get_file_async(self.client, self.db_name(app_name), file_id)
