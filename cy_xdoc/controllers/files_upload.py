@@ -78,7 +78,7 @@ def files_upload(app_name: str, UploadId: str, Index: int, FilePart: UploadFile,
         status = 1
 
 
-    upload_register_doc.update(
+    upload_register_doc.context.update(
         upload_register_doc.fields.Id == UploadId,
         upload_register_doc.fields.SizeUploaded << size_uploaded,
         upload_register_doc.fields.NumOfChunksCompleted <<num_of_chunks_complete,

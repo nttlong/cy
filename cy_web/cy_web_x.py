@@ -596,12 +596,14 @@ class RequestHandler:
 
             if method != "form":
 
-                if hasattr(v,"__module__") and v.__module__ =="typing" and v.__str__().startswith("typing.Union[") and v.__str__().endswith("None]"):
+
+                if hasattr(v,"__module__") and v.__module__ =="typing" and v.__str__().startswith("typing.Union[") and v.__str__().endswith("NoneType]"):
                     __defaults__ += [fastapi.Body(
                         default=None,
                         embed=True,
                         title=k
                     )]
+
                     # handler.__annotations__[k]=v.__args__[0]
 
 
@@ -1182,6 +1184,12 @@ def validate_token_in_request(self, request):
                 detail="Not authenticated",
                 headers={"WWW-Authenticate": "Bearer"},
             )
+    except jose.exceptions.JWTError:
+        raise HTTPException(
+            status_code=401,
+            detail="Not authenticated",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
     except jose.exceptions.ExpiredSignatureError as e:
         raise HTTPException(
             status_code=401,

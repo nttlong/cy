@@ -35,7 +35,7 @@ class FileServices:
             doc.fields.RegisterOn.desc(),
             doc.fields.Status.desc()
         ).skip(page_size * page_index).limit(page_size).project(
-            cy_docs.fields.UploadId>>doc.id,
+            cy_docs.fields.UploadId>>doc.fields.id,
             doc.fields.FileName,
             doc.fields.Status,
             doc.fields.SizeInHumanReadable,
@@ -186,7 +186,8 @@ class FileServices:
         self.file_storage_service.delete_files(app_name=app_name,files = delete_file_list,run_in_thread=True)
         self.file_storage_service.delete_files_by_id(app_name=app_name,ids =delete_file_list_by_id, run_in_thread=True)
         self.search_engine.delete_doc(app_name,upload_id)
-        ret = self.db(app_name).doc(DocUploadRegister).delete(cy_docs.fields._id==upload_id)
+        doc= self.db_connect.db(app_name).doc(DocUploadRegister)
+        ret = doc.context.delete(cy_docs.fields._id==upload_id)
         return
 
 
