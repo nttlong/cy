@@ -1290,6 +1290,7 @@ class Document:
         return DBDocument(coll)
 
 
+
 def get_doc(collection_name: str, client: pymongo.mongo_client.MongoClient, indexes: List[str] = [],
             unique_keys: List[str] = []) -> Document:
     return Document(collection_name, client, indexes=indexes, unique_keys=unique_keys)

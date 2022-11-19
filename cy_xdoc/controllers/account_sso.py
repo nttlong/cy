@@ -3,7 +3,6 @@ from cy_xdoc.auths import Authenticate
 from fastapi import Depends
 import uuid
 from cy_xdoc import libs
-import api_models.documents as docs
 from  fastapi import Request, Response
 
 @cy_web.hanlder(method="post",path= "get_sso_token")
